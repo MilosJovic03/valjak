@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapremina valjka</title>
+    <script type="text/javascript">
+        function izracunajZapreminu()
+        {
+            var pi = 3.14;
+            var visina = document.getElementById("visina").value;
+            var poluprecnik = document.getElementById("poluprecnik").value;
+            var label = document.getElementById('zapremina');
+        
+            if (!isNaN(visina) && !isNaN(poluprecnik) && visina != 0 && poluprecnik != 0) {
+                var zapremina = poluprecnik * poluprecnik * pi * visina;
+                label.innerText = 'Zapremina valjka je ' + zapremina + ' centimetara kubnih';
+            } else {
+                label.innerText = 'Unesite vrednosti';
+            }
+           
+        }
+        
+  </script>
+</head>
+<body>
+    <div>
+        <label for="visina">Unesite visinu valjka u cetimetrima:</label>
+        <input type="text" id="visina">
+    </div>
+    <br>
+    <div>
+        <label for="poluprecnik">Unesite poluprecnik osnove valjka u cenimetrima:</label>
+        <input type="text" id="poluprecnik">
+    </div>
+    <br>
+    <button onclick="izracunajZapreminu()">Izracunaj zapreminu</button>
+    <br>
+    <label id="zapremina" ></label>
+   
+</body>
+</html>
